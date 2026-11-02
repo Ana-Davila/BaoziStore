@@ -40,7 +40,7 @@ public class PedidoContoller {
 		return repository.save(pedido);
 	}
 	
-	@DeleteMapping
+	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> delete(@PathVariable Long id) {
 		if(!repository.existsById(id)) {
 			return ResponseEntity.notFound().build();
